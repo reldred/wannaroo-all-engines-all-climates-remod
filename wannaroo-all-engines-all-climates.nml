@@ -1,0 +1,426 @@
+/* wannaroo-all-engines-all-climates.nml */
+
+grf {
+	grfid: "jdr\91";
+	name: string(STR_GRF_NAME);
+	desc: string(STR_GRF_DESC);
+	version: 10;
+	url: string(STR_GRF_WEBSITE);
+	min_compatible_version: 10;
+
+    /*
+	param 0 {
+		param_enable_rail {
+			type: bool;
+			def_value: 1;
+			name: string(STR_PARAM_NAME_ENABLE_RAIL);
+		}
+	}
+	*/
+	
+	param 1 {
+		param_enable_steam {
+			type: bool;
+			def_value: 1;
+			name: string(STR_PARAM_NAME_ENABLE_STEAM);
+		}
+	}
+
+	param 11 {
+		param_steam_intro_year {
+			type: int;
+			min_value: 1900;
+			max_value: 1925;
+			def_value: 1925;
+			name: string(STR_PARAM_NAME_STEAM_INTRO);
+		}
+	}
+
+	param 2 {
+		param_enable_diesel {
+			type: bool;
+			def_value: 1;
+			name: string(STR_PARAM_NAME_ENABLE_DIESEL);
+		}
+	}
+
+	param 3 {
+		param_enable_elrl {
+			type: bool;
+			def_value: 1;
+			name: string(STR_PARAM_NAME_ENABLE_ELRL);
+		}
+	}
+
+	param 4 {
+		param_enable_mono {
+			type: bool;
+			def_value: 1;
+			name: string(STR_PARAM_NAME_ENABLE_MONO);
+		}
+	}
+
+	param 5 {
+		param_mono_intro_year {
+			type: int;
+			min_value: 1950;
+			max_value: 2050;
+			def_value: 1998;
+			name: string(STR_PARAM_NAME_MONO_INTRO);
+			desc: string(STR_PARAM_DESC_MONO_INTRO);
+		}
+	}
+
+	param 6 {
+		param_enable_mlev {
+			type: bool;
+			def_value: 1;
+			name: string(STR_PARAM_NAME_ENABLE_MLEV);
+		}
+	}
+
+	param 7 {
+		param_mlev_intro_year {
+			type: int;
+			min_value: 1970;
+			max_value: 2070;
+			def_value: 2020;
+			name: string(STR_PARAM_NAME_MLEV_INTRO);
+			desc: string(STR_PARAM_DESC_MLEV_INTRO);
+		}
+	}
+
+	param 8 {
+		param_enable_toyland {
+			type: bool;
+			def_value: 0;
+			name: string(STR_PARAM_NAME_ENABLE_TOYLAND);
+		}
+	}
+
+    /*
+	param 9 {
+		param_define_train_basecosts {
+			type: bool;
+			def_value: 0;
+			name: string(STR_PARAM_NAME_DEFINE_TRAIN_BASECOSTS);
+			desc: string(STR_PARAM_DESC_DEFINE_TRAIN_BASECOSTS);
+		}
+	}
+	*/
+
+	param 10 {
+		param_train_basecosts {
+			type: int;
+			name: string(STR_PARAM_NAME_TRAIN_BASECOSTS);
+			desc: string(STR_PARAM_DESC_BASECOSTS);
+			min_value: 0;
+			max_value: 5;
+			def_value: 0;
+			names: {
+				0: string(STR_PARAM_NORMAL);
+				1: string(STR_PARAM_HALF);
+				2: string(STR_PARAM_QUARTER);
+				3: string(STR_PARAM_EIGHTH);
+				4: string(STR_PARAM_SIXTEENTH);
+				5: string(STR_PARAM_MINIMAL);
+			};
+		}
+	}
+}
+
+//param_enable_rail = 1;
+
+disable_item (FEAT_TRAINS, 0, 26); // rail
+disable_item (FEAT_TRAINS, 54, 56); // monorail
+disable_item (FEAT_TRAINS, 84, 88); // maglev
+
+//railtypetable { RAIL, ELRL, MONO, MGLV }
+
+/*
+item (FEAT_RAILTYPES, rail, 0) {
+	property {
+		construction_cost:	1;
+	}
+}
+*/
+
+item (FEAT_TRAINS, engine_0, 0) {
+	property {
+		climates_available:	ALL_CLIMATES;
+		introduction_date:  date(param_steam_intro_year, 1, 1);
+		retire_early:       param_steam_intro_year - 1925;
+	}
+}
+
+item (FEAT_TRAINS, engine_1, 1) {
+	property {
+		climates_available:	ALL_CLIMATES;
+	}
+}
+
+item (FEAT_TRAINS, engine_2, 2) {
+	property {
+		climates_available:	ALL_CLIMATES;
+		introduction_date:  date(param_steam_intro_year + 21, 1, 1);
+		retire_early:       param_steam_intro_year - 1925;
+	}
+}
+
+item (FEAT_TRAINS, engine_3, 3) {
+	property {
+		climates_available:	ALL_CLIMATES;
+		introduction_date:  date(param_steam_intro_year + 27, 1, 1);
+		retire_early:       param_steam_intro_year - 1925;
+	}
+}
+
+item (FEAT_TRAINS, engine_4, 4) {
+	property {
+		climates_available:	ALL_CLIMATES;
+		introduction_date:  date(param_steam_intro_year + 41, 1, 1);
+		retire_early:       param_steam_intro_year - 1925;
+	}
+}
+
+item (FEAT_TRAINS, engine_5, 5) {
+	property {
+		climates_available:	ALL_CLIMATES;
+	}
+}
+
+item (FEAT_TRAINS, engine_6, 6) {
+	property {
+		climates_available:	ALL_CLIMATES;
+	}
+}
+
+item (FEAT_TRAINS, engine_7, 7) {
+	property {
+		climates_available:	ALL_CLIMATES;
+		introduction_date:  date(param_steam_intro_year + 19, 1, 1);
+		retire_early:       param_steam_intro_year - 1925;
+	}
+}
+
+item (FEAT_TRAINS, engine_8, 8) {
+	property {
+		climates_available:	ALL_CLIMATES;
+		introduction_date:  date(param_steam_intro_year + 9, 1, 1);
+		retire_early:       param_steam_intro_year - 1925;
+	}
+}
+
+item (FEAT_TRAINS, engine_9, 9) {
+	property {
+		climates_available:	ALL_CLIMATES;
+		introduction_date:  date(param_steam_intro_year + 10, 1, 1);
+		retire_early:       param_steam_intro_year - 1925;
+	}
+}
+
+item (FEAT_TRAINS, engine_10, 10) {
+	property {
+		climates_available:	ALL_CLIMATES;
+		introduction_date:  date(param_steam_intro_year + 29, 1, 1);
+		model_life:		VEHICLE_NEVER_EXPIRES;
+	}
+}
+
+item (FEAT_TRAINS, engine_11, 11) {
+	property {
+		climates_available:	ALL_CLIMATES;
+		refittable_cargo_classes:	ALL_NORMAL_CARGO_CLASSES & ~bitmask(CC_LIQUID);
+		misc_flags:		TRAIN_FLAG_AUTOREFIT;
+		refit_cost:		0;
+	}
+}
+
+item (FEAT_TRAINS, engine_12, 12) {
+	property {
+		climates_available:	ALL_CLIMATES;
+		model_life:		VEHICLE_NEVER_EXPIRES;
+		refittable_cargo_classes:	ALL_NORMAL_CARGO_CLASSES & ~bitmask(CC_LIQUID);
+		misc_flags:		TRAIN_FLAG_AUTOREFIT;
+		refit_cost:		0;
+	}
+}
+
+item (FEAT_TRAINS, engine_13, 13) {
+	property {
+		climates_available:	ALL_CLIMATES;
+	}
+}
+
+item (FEAT_TRAINS, engine_14, 14) {
+	property {
+		climates_available:	ALL_CLIMATES;
+	}
+}
+
+item (FEAT_TRAINS, engine_15, 15) {
+	property {
+		climates_available:	ALL_CLIMATES;
+		model_life:		VEHICLE_NEVER_EXPIRES;
+	}
+}
+
+item (FEAT_TRAINS, engine_16, 16) {
+	property {
+		climates_available:	ALL_CLIMATES;
+	}
+}
+
+item (FEAT_TRAINS, engine_17, 17) {
+	property {
+		climates_available:	ALL_CLIMATES;
+	}
+}
+
+item (FEAT_TRAINS, engine_18, 18) {
+	property {
+		climates_available:	ALL_CLIMATES;
+		model_life:		VEHICLE_NEVER_EXPIRES;
+	}
+}
+
+item (FEAT_TRAINS, engine_19, 19) {
+	property {
+		climates_available:	ALL_CLIMATES;
+	}
+}
+
+item (FEAT_TRAINS, engine_20, 20) {
+	property {
+		climates_available:	ALL_CLIMATES;
+	}
+}
+
+item (FEAT_TRAINS, engine_21, 21) {
+	property {
+		climates_available:	ALL_CLIMATES;
+	}
+}
+
+item (FEAT_TRAINS, engine_22, 22) {
+	property {
+		climates_available:	ALL_CLIMATES;
+		model_life:		VEHICLE_NEVER_EXPIRES;
+		refittable_cargo_classes:	ALL_NORMAL_CARGO_CLASSES & ~bitmask(CC_LIQUID);
+		misc_flags:		TRAIN_FLAG_AUTOREFIT;
+		refit_cost:		0;
+	}
+}
+
+item (FEAT_TRAINS, engine_23, 23) {
+	property {
+		climates_available:	ALL_CLIMATES;
+	}
+}
+
+item (FEAT_TRAINS, engine_24, 24) {
+	property {
+		climates_available:	ALL_CLIMATES;
+		model_life:		VEHICLE_NEVER_EXPIRES;
+	}
+}
+
+item (FEAT_TRAINS, engine_25, 25) {
+	property {
+		climates_available:	ALL_CLIMATES;
+	}
+}
+
+item (FEAT_TRAINS, engine_26, 26) {
+	property {
+		climates_available:	ALL_CLIMATES;
+		model_life:		VEHICLE_NEVER_EXPIRES;
+	}
+}
+
+item (FEAT_TRAINS, engine_54, 54) {
+	property {
+		climates_available:	ALL_CLIMATES;
+		introduction_date:	date(param_mono_intro_year, 1, 1);
+		model_life:		VEHICLE_NEVER_EXPIRES;
+	}
+}
+
+item (FEAT_TRAINS, engine_55, 55) {
+	property {
+		climates_available:	ALL_CLIMATES;
+		introduction_date:	date(param_mono_intro_year + 7, 1, 1);
+		model_life:		VEHICLE_NEVER_EXPIRES;
+		refittable_cargo_classes:	ALL_NORMAL_CARGO_CLASSES & ~bitmask(CC_LIQUID);
+		misc_flags:		TRAIN_FLAG_AUTOREFIT;
+		refit_cost:		0;
+	}
+}
+
+item (FEAT_TRAINS, engine_56, 56) {
+	property {
+		climates_available:	ALL_CLIMATES;
+		introduction_date:	date(param_mono_intro_year + 1, 1, 1);
+	}
+}
+
+item (FEAT_TRAINS, engine_84, 84) {
+	property {
+		climates_available:	ALL_CLIMATES;
+		introduction_date:	date(param_mlev_intro_year, 1, 1);
+		model_life:		VEHICLE_NEVER_EXPIRES;
+	}
+}
+
+item (FEAT_TRAINS, engine_85, 85) {
+	property {
+		climates_available:	ALL_CLIMATES;
+		introduction_date:	date(param_mlev_intro_year + 8, 1, 1);
+		model_life:		VEHICLE_NEVER_EXPIRES;
+	}
+}
+
+item (FEAT_TRAINS, engine_86, 86) {
+	property {
+		climates_available:	ALL_CLIMATES;
+		introduction_date:	date(param_mlev_intro_year + 15, 1, 1);
+		model_life:		VEHICLE_NEVER_EXPIRES;
+	}
+}
+
+item (FEAT_TRAINS, engine_87, 87) {
+	property {
+		climates_available:	ALL_CLIMATES;
+		introduction_date:	date(param_mlev_intro_year + 17, 1, 1);
+		model_life:		VEHICLE_NEVER_EXPIRES;
+	}
+}
+
+item (FEAT_TRAINS, engine_88, 88) {
+	property {
+		climates_available:	ALL_CLIMATES;
+		introduction_date:	date(param_mlev_intro_year + 1, 1, 1);
+		//model_life:		50; // base_life
+	}
+}
+
+//if (!param_enable_rail) { disable_item (FEAT_TRAINS, 0, 26); }
+if (!param_enable_steam) { disable_item (FEAT_TRAINS, 0); disable_item (FEAT_TRAINS, 2, 4); disable_item (FEAT_TRAINS, 7, 10); }
+if (!param_enable_diesel) { disable_item (FEAT_TRAINS, 1); disable_item (FEAT_TRAINS, 5, 6); disable_item (FEAT_TRAINS, 11, 22); }
+if (!param_enable_elrl) { disable_item (FEAT_TRAINS, 23, 26); }
+if (!param_enable_mono) { disable_item (FEAT_TRAINS, 54, 56); }
+if (!param_enable_mlev) { disable_item (FEAT_TRAINS, 84, 88); }
+
+if (!param_enable_toyland) { disable_item (FEAT_TRAINS, 2, 6); disable_item (FEAT_TRAINS, 56); disable_item (FEAT_TRAINS, 88); }
+
+//if (param_define_train_basecosts) {
+if (1 == 1) {
+	basecost {
+	 	PR_BUILD_VEHICLE_TRAIN:	0 - param_train_basecosts;
+	 	PR_BUILD_VEHICLE_WAGON:	0 - param_train_basecosts;
+	 	PR_RUNNING_TRAIN_STEAM:	0 - param_train_basecosts;
+	 	PR_RUNNING_TRAIN_DIESEL: 0 - param_train_basecosts;
+	 	PR_RUNNING_TRAIN_ELECTRIC: 0 - param_train_basecosts;
+	}
+}
+
