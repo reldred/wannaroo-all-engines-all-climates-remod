@@ -1,4 +1,4 @@
 #!/bin/bash
-pyrun /home/jrook/Downloads/openttd/nml-0.4.5/nmlc -c -p DEFAULT --clear-orphaned wannaroo-all-engines-all-climates.nml
-cp -i wannaroo-all-engines-all-climates.grf /home/jrook/.openttd/newgrf/wannaroo-all-engines-all-climates.grf
+pyrun $HOME/Downloads/openttd/nml-0.4.5/nmlc -c -p DEFAULT --clear-orphaned wannaroo-all-engines-all-climates.nml
+cp -i wannaroo-all-engines-all-climates.grf $HOME/.openttd/newgrf/wannaroo-all-engines-all-climates.grf
 
