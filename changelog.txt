@@ -1,6 +1,6 @@
-Wannaroo All Engines All Climates
+Wannaroo All Engines in All Climates
 
-1.0 - 2020-04-xx
+1.0 - 2020-04-12
 -----------------------------------------------------------
 Initial release
 

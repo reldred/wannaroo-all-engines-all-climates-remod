@@ -2,28 +2,22 @@
 # English lng file
 
 STR_GRF_NAME		:Wannaroo All Engines in All Climates
-STR_GRF_DESC		:{}All engines are available in all climates
-STR_GRF_WEBSITE		:
+STR_GRF_DESC		:{}All engines are available in all climates{}{}License: GPL v2
+STR_GRF_WEBSITE		:https://github.com/jrook1445/wannaroo-all-engines-all-climates
 
 # parameter text
-#STR_PARAM_NAME_ENABLE_RAIL			:Rail engines (Steam, Diesel, Electric Rail)
 STR_PARAM_NAME_ENABLE_STEAM         :Steam engines
-STR_PARAM_NAME_STEAM_INTRO          :Steam engines begin (1900 - 1925)
+STR_PARAM_NAME_STEAM_INTRO          :Steam engines intro (1900 - 1925)
 STR_PARAM_NAME_ENABLE_DIESEL        :Diesel engines
 STR_PARAM_NAME_ENABLE_ELRL          :Electric Rail engines
 STR_PARAM_NAME_ENABLE_MONO			:Monorail engines
-STR_PARAM_NAME_MONO_INTRO			:Monorail intro year
-STR_PARAM_DESC_MONO_INTRO			:max 2050, min 1950, default 1998
+STR_PARAM_NAME_MONO_INTRO			:Monorail engines intro (1950 - 2050)
 STR_PARAM_NAME_ENABLE_MLEV			:Maglev engines
-STR_PARAM_NAME_MLEV_INTRO			:Maglev start year
-STR_PARAM_DESC_MLEV_INTRO			:max 2070, min 1970, default 2020
-STR_PARAM_NAME_ENABLE_TOYLAND			:Toyland engines
+STR_PARAM_NAME_MLEV_INTRO			:Maglev engines intro (1970 - 2070)
+STR_PARAM_NAME_ENABLE_TOYLAND		:Toyland engines
 
-#STR_PARAM_NAME_DEFINE_TRAIN_BASECOSTS		:Train base costs defined by this NewGRF
-#STR_PARAM_DESC_DEFINE_TRAIN_BASECOSTS		:Off (default) if another NewGRF is defining train base costs.{}On if this NewGRF will define them.{}{}Base costs defined: PR_BUILD_VEHICLE_TRAIN, PR_BUILD_VEHICLE_WAGON, PR_RUNNING_TRAIN_STEAM, PR_RUNNING_TRAIN_DIESEL, PR_RUNNING_TRAIN_ELECTRIC
-
-STR_PARAM_NAME_TRAIN_BASECOSTS			:Train base costs (this NewGRF only)
-STR_PARAM_DESC_BASECOSTS			:Normal or reduced base costs (default = normal).
+STR_PARAM_NAME_TRAIN_BASECOSTS		:Train base costs (this NewGRF only)
+STR_PARAM_DESC_BASECOSTS			:Normal or reduced base costs (default = normal).{}{}Base costs defined: PR_BUILD_VEHICLE_TRAIN, PR_BUILD_VEHICLE_WAGON, PR_RUNNING_TRAIN_STEAM, PR_RUNNING_TRAIN_DIESEL, PR_RUNNING_TRAIN_ELECTRIC
 
 STR_PARAM_NORMAL				:Normal
 STR_PARAM_HALF					:1/2
