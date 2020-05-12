@@ -13,7 +13,11 @@ then
     tar cvf wannaroo-all-engines-all-climates.tar wannaroo-all-engines-all-climates
     cp -i wannaroo-all-engines-all-climates.tar $HOME/.openttd/newgrf
     #cp -i wannaroo-all-engines-all-climates.grf $HOME/.openttd/newgrf
+    echo -e "\e[92m*** build successful ***"
 else
-    echo "nmlc could not build newgrf"
+    echo -e "\e[91m*** nmlc could not build newgrf ***"
 fi
+echo "NML info:"
+echo "---------------"
+$NMLC --version
 
