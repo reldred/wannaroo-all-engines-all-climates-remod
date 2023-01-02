@@ -1026,8 +1026,9 @@ item (FEAT_TRAINS, engine_115, 115) {
 if (!param_enable_steam) { disable_item (FEAT_TRAINS, 0); disable_item (FEAT_TRAINS, 2, 4); disable_item (FEAT_TRAINS, 7, 10); }
 if (!param_enable_diesel) { disable_item (FEAT_TRAINS, 1); disable_item (FEAT_TRAINS, 5, 6); disable_item (FEAT_TRAINS, 11, 22); }
 if (!param_enable_elrl) { disable_item (FEAT_TRAINS, 23, 26); }
-if (!param_enable_mono) { disable_item (FEAT_TRAINS, 54, 56); }
-if (!param_enable_mlev) { disable_item (FEAT_TRAINS, 84, 88); }
+if (!param_enable_steam & !param_enable_diesel & !param_enable_elrl) { disable_item (FEAT_TRAINS, 27, 53);}
+if (!param_enable_mono) { disable_item (FEAT_TRAINS, 54, 83); }
+if (!param_enable_mlev) { disable_item (FEAT_TRAINS, 84, 115); }
 
 if (!param_enable_toyland) { disable_item (FEAT_TRAINS, 2, 6); disable_item (FEAT_TRAINS, 45, 53); disable_item (FEAT_TRAINS, 56); disable_item (FEAT_TRAINS, 75, 83); disable_item (FEAT_TRAINS, 88); disable_item (FEAT_TRAINS, 107, 115); }
 
